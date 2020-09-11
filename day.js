@@ -4,11 +4,6 @@ function dayName(date) {
   return daysOfTheWeek[date.getDay()];
 }
 
-// Returns a greeting for the given date.
 function greeting(date) {
-  // FILL IN
-}
-
-function greeting(time) {
-  return `Hello, world! Happy ${dayName(time)}!`;
+  return `Hello, world! Happy ${dayName(date)}!`;
 }
