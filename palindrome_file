@@ -1,0 +1,19 @@
+#!/usr/local/bin/node
+
+let fs = require("fs");
+let Phrase = require("craff-palindrome");
+
+let text = fs.readFileSync("phrases.txt", "utf-8");
+let palindromes = [];
+text.split("\n").forEach(function(line) {
+  let phrase = new Phrase(line);
+  if (phrase.palindrome()) {
+    palindromes.push("palindrome detected: " + line);
+  };
+});
+
+palindrome_strings = palindromes.join("\n");
+
+fs.writeFileSync("palindromes.txt", palindrome_strings, function(err) {
+if (err) return console.log(err);
+});
